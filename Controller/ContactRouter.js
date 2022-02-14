@@ -1,10 +1,9 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const router = express.Router()
-const mongoURI= 'mongodb+srv://user:user123@crud.zlazp.mongodb.net/Phonebook?retryWrites=true&w=majority'
 const contactsModel = require('../Models/ContactModel')
 const { cleanUpAndValidate } = require('../utils/AuthUtils')
-mongoose.connect(mongoURI,
+mongoose.connect(process.env.mongoURI,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -186,7 +185,7 @@ router.get('/search_contact', async (req, res) => {
         ).limit(LIMIT).skip(skip)
         return res.send({
             status: 200,
-            message: 'contact fetched successfully',
+            message: 'contacts fetched successfully',
             data: allContact
         })
     } catch (error) {

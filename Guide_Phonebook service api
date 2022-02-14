@@ -1,0 +1,7 @@
+ The phonebook app expose APIs supporting the following functionalities:
+
+Adding a contact  -   https://phonebook-service-m.herokuapp.com/contact/add_contact
+Modifying an existing contact  - https://phonebook-service-m.herokuapp.com/contact/edit_contact
+Deleting a contact          -https://phonebook-service-m.herokuapp.com/contact/delete_contact
+Get all contacts (10 contacts per page by default)    -https://phonebook-service-m.herokuapp.com/contact/get_all_contact
+Search a contact by name or email address (10 results per page by default) -https://phonebook-service-m.herokuapp.com/contact/search_contact?match=name || email
